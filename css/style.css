@@ -72,6 +72,12 @@ section {
     background-color: var(--section-bg);
 }
 
+/* Ensure text in sections respects the theme color */
+section, section p, section h1, section h2, section h3, section h4, section h5, section h6 {
+    color: var(--body-text);
+}
+
+
 .bg-light {
     background-color: var(--section-bg-light-override) !important;
 }

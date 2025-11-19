@@ -1,151 +1,392 @@
 /* Custom Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;500;700&display=swap");
+
 :root {
-    /* Light Mode Defaults */
-    --body-bg: #ffffff;
-    --body-text: #333333;
-    --section-bg: #ffffff;
-    --section-bg-light-override: #f8f9fa; /* Bootstrap's bg-light */
-    --section-bg-dark-override: #343a40; /* Bootstrap's bg-dark */
-    --skill-item-bg: #ffffff;
-    --skill-item-text: #333333;
-    --card-bg: #ffffff;
-    --card-text: #333333;
-    --card-border-color: #e0e0e0;
-    --footer-bg: #343a40;
-    --footer-text: #ffffff;
-    --navbar-bg: #f8f9fa; /* Light mode navbar bg */
-    --navbar-text: rgba(0, 0, 0, 0.55); /* Light mode navbar link color (dark) */
-    --navbar-brand-text: #000000; /* Light mode navbar brand color (dark) */
-    --navbar-active-text: #0d6efd; /* Active link color for light navbar */
-    --navbar-toggler-icon-filter: none; /* For light background, dark icon */
-    --scrolled-navbar-bg: rgba(248, 249, 250, 0.9); /* Light scrolled navbar */
+  /* Light Mode Palette */
+  --primary-color: #2563eb; /* Royal Blue */
+  --secondary-color: #64748b; /* Slate */
+  --accent-color: #0ea5e9; /* Sky Blue */
+
+  --body-bg: #f8fafc; /* Very light slate/white */
+  --body-text: #1e293b; /* Slate 800 */
+
+  --section-bg: #ffffff;
+  --section-bg-alt: #f1f5f9; /* Slate 100 */
+
+  --card-bg: #ffffff;
+  --card-text: #1e293b;
+  --card-border: rgba(148, 163, 184, 0.2);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --navbar-backdrop: blur(12px);
+  --navbar-text: #334155;
+  --navbar-brand: #0f172a;
+  --navbar-active: #2563eb;
+
+  --footer-bg: #0f172a; /* Slate 900 */
+  --footer-text: #f8fafc;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+
+  --transition-speed: 0.3s;
 }
 
 body.dark-mode {
-    /* Dark Mode Overrides */
-    --body-bg: #1a1a1a;
-    --body-text: #e0e0e0;
-    --section-bg: #1a1a1a;
-    --section-bg-light-override: #212529; /* Darker background for sections that were bg-light */
-    --section-bg-dark-override: #343a40; /* Keep dark sections dark */
-    --skill-item-bg: #212121;
-    --skill-item-text: #e0e0e0;
-    --card-bg: #212121;
-    --card-text: #e0e0e0;
-    --card-border-color: #333333;
-    --footer-bg: #212121;
-    --footer-text: #e0e0e0;
-    --navbar-bg: #212121;
-    --navbar-text: rgba(255, 255, 255, 0.75);
-    --navbar-brand-text: #ffffff;
-    --navbar-active-text: #0dcaf0; /* A lighter blue for dark mode active link */
-    --navbar-toggler-icon-filter: invert(1) grayscale(100%) brightness(200%);
-    --scrolled-navbar-bg: rgba(33, 33, 33, 0.9);
+  /* Dark Mode Palette */
+  --primary-color: #3b82f6;
+  --secondary-color: #94a3b8;
+  --accent-color: #38bdf8;
+
+  --body-bg: #0f172a; /* Slate 900 */
+  --body-text: #e2e8f0; /* Slate 200 */
+
+  --section-bg: #0f172a;
+  --section-bg-alt: #1e293b; /* Slate 800 */
+
+  --card-bg: #1e293b;
+  --card-text: #e2e8f0;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+
+  --navbar-bg: rgba(15, 23, 42, 0.8);
+  --navbar-text: #cbd5e1;
+  --navbar-brand: #f8fafc;
+  --navbar-active: #38bdf8;
+
+  --footer-bg: #020617; /* Slate 950 */
+  --footer-text: #94a3b8;
+
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+/* Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
-    background-color: var(--body-bg);
-    color: var(--body-text);
+  font-family: "Inter", sans-serif;
+  background-color: var(--body-bg);
+  color: var(--body-text);
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+  overflow-x: hidden;
 }
 
-#home {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/Opening Screen.jpeg') no-repeat center center;
-    background-size: cover;
-    min-height: 100vh;
-    color: white; /* Home section text should always be white due to dark overlay */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-#home h1,
-#home p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-#home h1 {
-    font-weight: 700;
+a {
+  text-decoration: none;
+  transition: color var(--transition-speed);
 }
 
 section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: var(--section-bg);
+  padding: 80px 0;
+  position: relative;
 }
 
-/* Ensure text in sections respects the theme color */
-section, section p, section h1, section h2, section h3, section h4, section h5, section h6 {
-    color: var(--body-text);
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-
-.bg-light {
-    background-color: var(--section-bg-light-override) !important;
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--navbar-backdrop);
+  -webkit-backdrop-filter: var(--navbar-backdrop);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
 }
 
-/* The original .bg-dark class is now handled by --section-bg-dark-override */
-/* .bg-dark {
-    background-color: var(--section-bg-dark-override) !important;
-} */
-
-.skill-item {
-    background: var(--skill-item-bg);
-    color: var(--skill-item-text);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-10px);
-}
-
-.card {
-    background-color: var(--card-bg);
-    color: var(--card-text);
-    transition: transform 0.3s ease;
-    border: 1px solid var(--card-border-color);
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
+/* Navbar */
 .navbar {
-    transition: background-color 0.3s ease;
-    background-color: var(--navbar-bg) !important;
+  background-color: var(--navbar-bg) !important;
+  backdrop-filter: var(--navbar-backdrop);
+  -webkit-backdrop-filter: var(--navbar-backdrop);
+  border-bottom: 1px solid var(--card-border);
+  transition: all var(--transition-speed);
+  padding: 1rem 0;
 }
 
 .navbar-brand {
-    color: var(--navbar-brand-text) !important;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--navbar-brand) !important;
 }
 
-.navbar-nav .nav-link {
-    color: var(--navbar-text) !important;
+.nav-link {
+  font-weight: 500;
+  color: var(--navbar-text) !important;
+  position: relative;
 }
 
-.navbar.scrolled {
-    background-color: var(--scrolled-navbar-bg) !important;
+.nav-link:hover,
+.nav-link.active {
+  color: var(--navbar-active) !important;
 }
 
-/* Active link color */
-.navbar-nav .nav-link.active {
-    color: var(--navbar-active-text) !important;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--navbar-active);
+  transition: width var(--transition-speed);
 }
 
-.navbar-toggler-icon {
-    filter: var(--navbar-toggler-icon-filter);
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
-.navbar.scrolled {
-    background-color: var(--scrolled-navbar-bg) !important;
+/* Hero Section */
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.1),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(14, 165, 233, 0.1),
+      transparent 40%
+    );
+  padding-top: 80px; /* Account for fixed navbar */
 }
 
-body.dark-mode .navbar.scrolled {
-    /* This rule is now redundant as --scrolled-navbar-bg handles it */
-    /* background-color: rgba(26, 26, 26, 0.9) !important; */
+#home h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
+#home .lead {
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  ); /* Keep gradient */
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* About Section */
+#about {
+  background-color: var(--section-bg);
+}
+
+/* Skills Section */
+#skills {
+  background-color: var(--section-bg-alt);
+}
+
+.skill-item {
+  background: var(--card-bg);
+  color: var(--card-text);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-speed);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.skill-item h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Projects Section */
+#projects {
+  background-color: var(--section-bg);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-speed);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+  color: var(--card-text);
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+#contact {
+  background-color: var(--section-bg-alt);
+  text-align: center;
+}
+
+/* Footer */
 footer {
-    background-color: var(--footer-bg) !important;
-    color: var(--footer-text);
+  background-color: var(--footer-bg) !important;
+  color: var(--footer-text);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode Toggle */
+#theme-toggle {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-speed);
+}
+
+body.dark-mode #theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    background-size: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-item .card-img-top {
+    height: 200px; /* Reset to smaller height for 3-column layout */
+    object-fit: cover;
+}
+
+/* Move controls outside the cards slightly */
+.carousel-control-prev {
+    left: -5%;
+}
+.carousel-control-next {
+    right: -5%;
+}
+
+/* Ensure carousel doesn't overflow due to negative margins of controls */
+#projectCarousel {
+    padding: 0 50px;
 }

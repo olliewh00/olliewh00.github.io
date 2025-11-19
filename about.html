@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me - Ryan Oliver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap CSS (assuming it's used on the index page) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Ryan Oliver</a>
@@ -16,7 +17,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
@@ -32,45 +33,47 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#contact">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" id="theme-toggle" class="nav-link">Dark Mode</a>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#" id="theme-toggle" class="nav-link"><i class="fas fa-moon"></i> Dark Mode</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="text-center py-5">
+    <section id="about" class="text-center py-5 mt-5">
         <div class="container">
-            <h2 class="display-4 fw-bold mb-4">About Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <p class="lead">
-                        Hello! I'm Ryan Oliver, a fresh graduate with a focus on creating robust and scalable applications.
-                        I enjoy solving complex problems and continuously learning new technologies.
-                    </p>
-                    <p>
-                       My journey in tech started during my time as a student in Politehnika Wroclawska, where my course of Electronics and Computer Sciecne Enginerring took me to understand the world of electronics, microcontrollers and Programming. During my time as a student I got to learn about AI, ML and Computer Vision which resonated with me and made me create projects on these topics.
-                    </p>
-                    <p>
-                        Outside of coding. I voulunteer at ESN (Erasmus Student Network). An orgnisation that helps international students settle in a new country. I was the local Project Manager at my university as well as the Audit Commisison member. Following my tenure in the local level, I took my passion for technology and support to join the IT team as the Support Specialist for ESN Poland. A role that i am currently voulunteering for. I also enjoy playing football, fortnite and going to the gym.
-                    </p>
-                    <p>
-                        Feel Free to check out my CV by clicking the button below!
-                    </p>
+            <div class="glass-panel p-5 fade-in">
+                <h2 class="display-4 fw-bold mb-4 text-gradient">About Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <p class="lead mb-4">
+                            Hello! I'm Ryan Oliver, a fresh graduate with a focus on creating robust and scalable applications.
+                            I enjoy solving complex problems and continuously learning new technologies.
+                        </p>
+                        <p class="mb-3">
+                           My journey in tech started during my time as a student in Politehnika Wroclawska, where my course of Electronics and Computer Science Engineering took me to understand the world of electronics, microcontrollers and Programming. During my time as a student I got to learn about AI, ML and Computer Vision which resonated with me and made me create projects on these topics.
+                        </p>
+                        <p class="mb-4">
+                            Outside of coding. I volunteer at ESN (Erasmus Student Network). An organisation that helps international students settle in a new country. I was the local Project Manager at my university as well as the Audit Commission member. Following my tenure in the local level, I took my passion for technology and support to join the IT team as the Support Specialist for ESN Poland. A role that i am currently volunteering for. I also enjoy playing football, fortnite and going to the gym.
+                        </p>
+                        <p class="mb-4">
+                            Feel Free to check out my CV by clicking the button below!
+                        </p>
+                        <a href="assets/Ryan_Oliver Poland Resume.pdf" class="btn btn-primary btn-lg" target="_blank"><i class="fas fa-file-alt me-2"></i>View CV</a>
+                    </div>
                 </div>
-                <a href="assets/Ryan_Oliver Poland Resume.pdf" class="btn btn-primary btn-lg" target="_blank">View CV</a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="text-center">
         <div class="container">
-            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            <p class="mb-0">&copy; 2025 Ryan Oliver. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

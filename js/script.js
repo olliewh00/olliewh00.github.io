@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyTheme = (theme) => {
         if (theme === 'dark-mode') {
             document.body.classList.add('dark-mode');
-            themeToggleBtn.textContent = 'Light Mode'; // Update text
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
         } else {
             document.body.classList.remove('dark-mode');
-            themeToggleBtn.textContent = 'Dark Mode'; // Update text
+            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
         }
     };
 
@@ -29,9 +29,34 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme('light-mode'); // Default to light mode if no preference is stored
     }
 
-    themeToggleBtn.addEventListener('click', () => {
+    themeToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
         const newTheme = document.body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
         applyTheme(newTheme);
         localStorage.setItem('theme', newTheme);
     });
+});
+
+// Add fade-in animation to elements as they scroll into view
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.card, .skill-item, .glass-panel').forEach(el => {
+    el.style.opacity = '0'; // Initial state
+    el.classList.add('fade-in'); // Add class to trigger animation (handled by CSS now, but good to have JS fallback/control if needed)
+    // Actually, let's use the observer to add the class
+    el.classList.remove('fade-in');
+    observer.observe(el);
 });

@@ -297,6 +297,7 @@ section {
 .card-body {
   padding: 1.5rem;
   color: var(--card-text);
+  height: 250px;
 }
 
 .card-title {
@@ -307,6 +308,7 @@ section {
 .card-text {
   color: var(--secondary-color);
   margin-bottom: 1.5rem;
+  min-height: 100px;
 }
 
 /* Contact Section */
